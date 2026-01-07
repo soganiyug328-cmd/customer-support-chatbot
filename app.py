@@ -48,6 +48,12 @@ def get_response(intent):
             return random.choice(i["responses"])
 
 # ---------- STREAMLIT UI ----------
+st.set_page_config(
+    page_title="Customer Support Chatbot",
+    page_icon="🤖",
+    menu_items={}
+)
+
 st.set_page_config(page_title="Customer Support Chatbot", page_icon="🤖")
 
 st.title("🤖 Customer Support Chatbot")
@@ -74,5 +80,6 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.markdown(response)
+
 
 
