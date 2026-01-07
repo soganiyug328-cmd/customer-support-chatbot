@@ -1,8 +1,6 @@
 import json
 import random
-import nltk
 import streamlit as st
-from nltk.stem import WordNetLemmatizer
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 
@@ -16,8 +14,6 @@ nltk.data.path.append(nltk_data_dir)
 
 nltk.download("punkt", download_dir=nltk_data_dir)
 nltk.download("wordnet", download_dir=nltk_data_dir)
-
-lemmatizer = WordNetLemmatizer()
 
 # Load intents
 with open("intents.json") as file:
@@ -33,8 +29,9 @@ for intent in data["intents"]:
         labels.append(intent["tag"])
 
 def preprocess(text):
-    tokens = nltk.word_tokenize(text.lower())
-    return " ".join(lemmatizer.lemmatize(word) for word in tokens)
+    text = text.lower()
+    text = text.replace("?", "").replace("!", "").replace(".", "")
+    return text
 
 texts = [preprocess(text) for text in texts]
 
@@ -77,4 +74,5 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.markdown(response)
+
 
