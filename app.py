@@ -3,6 +3,8 @@ import random
 import streamlit as st
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
+import nltk
+import os
 st.set_page_config(
     page_title="Customer Support Chatbot",
     page_icon="🤖",
@@ -11,8 +13,6 @@ st.set_page_config(
 
 
 # Download NLTK data
-import nltk
-import os
 
 nltk_data_dir = os.path.join(os.getcwd(), "nltk_data")
 os.makedirs(nltk_data_dir, exist_ok=True)
@@ -81,6 +81,7 @@ if user_input:
 
     with st.chat_message("assistant"):
         st.markdown(response)
+
 
 
 
