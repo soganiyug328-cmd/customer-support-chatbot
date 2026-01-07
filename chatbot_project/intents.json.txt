@@ -1,0 +1,59 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Hey", "Good morning"],
+      "responses": ["Hello! How can I help you today?"]
+    },
+    {
+      "tag": "billing",
+      "patterns": [
+        "I was charged twice",
+        "Billing issue",
+        "Wrong amount deducted",
+        "Payment problem"
+      ],
+      "responses": [
+        "Sorry for the inconvenience. Please share your order ID for billing support."
+      ]
+    },
+    {
+      "tag": "refund",
+      "patterns": [
+        "I want a refund",
+        "Return my money",
+        "Refund my order"
+      ],
+      "responses": [
+        "Refund requests are processed within 5–7 business days."
+      ]
+    },
+    {
+      "tag": "order_status",
+      "patterns": [
+        "Where is my order",
+        "Track my order",
+        "Order status"
+      ],
+      "responses": [
+        "Please provide your order ID to check the order status."
+      ]
+    },
+    {
+      "tag": "technical",
+      "patterns": [
+        "App not working",
+        "Login issue",
+        "Website error"
+      ],
+      "responses": [
+        "Please try clearing cache or reinstalling the app."
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Thank you", "Goodbye"],
+      "responses": ["Thank you for contacting support!"]
+    }
+  ]
+}
